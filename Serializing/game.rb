@@ -51,8 +51,8 @@ end
 def load_game(game)
   game_file = GameFile.new("#{game}.yaml")
   yaml = game_file.read
-  YAML::load(yaml)
   system("cat #{game}.yaml")
+  YAML::load(yaml)
 end
 
 save_game(Ogre.new(10,15,"dirty"))
