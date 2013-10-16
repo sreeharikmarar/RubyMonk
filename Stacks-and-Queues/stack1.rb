@@ -4,13 +4,17 @@ class Stack
   end
   def push(item)
    @store.push(item)
-   puts "Store :#{@store}"
+   self # Push method should always return self for allowing the chaining of the method , 
+	# like it will return the modified result each time
   end
   def pop
    @store.pop
   end
+  def to_s
+    "store : #{@store}"
+  end
 end
 s = Stack.new
-s.push(1)
-s.push(2)
+puts s.push(1)
+puts s.push(2).push(3)
 puts s.pop
