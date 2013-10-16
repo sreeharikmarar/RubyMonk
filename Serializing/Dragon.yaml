@@ -1,0 +1,4 @@
+--- !ruby/object:Dragon
+strength: 20
+speed: 15
+color: Blue

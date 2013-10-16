@@ -44,20 +44,20 @@ end
 
 def save_game(characters)
   yaml = YAML::dump(characters)
-  game_file = GameFile.new("/home/prescience/SREEHARI_DATA/Ruby_practices/mygame/saved.yaml")
+  game_file = GameFile.new("#{characters.class}.yaml")
   game_file.write(yaml)
 end
 
-def load_game
-  game_file = GameFile.new("/home/prescience/SREEHARI_DATA/Ruby_practices/mygame/saved.yaml")
+def load_game(game)
+  game_file = GameFile.new("#{game}.yaml")
   yaml = game_file.read
   YAML::load(yaml)
+  system("cat #{game}.yaml")
 end
 
 save_game(Ogre.new(10,15,"dirty"))
-p load_game.smell
+load_game("Ogre")
 save_game(Dragon.new(20,15,"Blue"))
-p load_game.color
+load_game("Dragon")
 save_game(Fairy.new("Great"))
-p load_game.intelligence
-
+load_game("Fairy")

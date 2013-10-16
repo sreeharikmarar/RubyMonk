@@ -1,0 +1,4 @@
+--- !ruby/object:Fairy
+strength: 1
+speed: 42
+intelligence: Great
